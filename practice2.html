@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+</head>
+<body>
+    <h1>Practice 2: Change the paragraph</h1>
+
+    <form id="styledForm">
+        <h2>Background Color</h2>
+
+        <label for="bgR">Background red (0-255):</label>
+        <input type="number" id="bgR"><br>
+
+        <label for="bgG">Background green (0-255):</label>
+        <input type="number" id="bgG"><br>
+
+        <label for="bgB">Background blue (0-255):</label>
+        <input type="number" id="bgB"><br>
+
+        <h2>Border Color</h2>
+
+        <label for="borderR">Border red (0-255):</label>
+        <input type="number" id="borderR"><br>
+
+        <label for="borderG">Border green (0-255):</label>
+        <input type="number" id="borderG"><br>
+
+        <label for="borderB">Border blue (0-255):</label>
+        <input type="number" id="borderB"><br>
+
+        <h2>Border Thickness</h2>
+
+        <label for="thickness">Border thickness (in pixels):</label>
+        <input type="number" id="thickness"><br><br>
+
+        <input type="submit" value="Change the paragraph style!">
+
+    </form>
+    <p id="styledParagraph">To be, or not to be, that is the question:
+    Whether 'tis nobler in the mind to suffer
+    The slings and arrows of outrageous fortune,
+    Or to take arms against a sea of troubles,
+    And by opposing end them: to die, to sleep
+    No more; and by a sleep, to say we end
+    The heart-ache, and the thousand natural shocks
+    That Flesh is heir to?</p>
+
+    <script>
+        document.getElementById("styledForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let bgR = document.getElementById("bgR").value;
+            let bgG = document.getElementById("bgG").value;
+            let bgB = document.getElementById("bgB").value;
+            let borderR = document.getElementById("borderR").value;
+            let borderG = document.getElementById("borderG").value;
+            let borderB = document.getElementById("borderB").value;
+            let thickness = document.getElementById("thickness").value;
+
+            let bgColor = "rgb(" + bgR + ", " + bgG + ", " + bgB + ")";
+            let borderColor = "rgb(" + borderR + ", " + borderG + ", " + borderB + ")";
+           
+            let paragraph = document.getElementById("styledParagraph");
+            paragraph.style.backgroundColor = bgColor;
+            paragraph.style.border = thickness + "px solid " + borderColor;
+        });
+    </script>
+</body>
+</html>
