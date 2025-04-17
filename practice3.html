@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice 3</title>
+  <style>
+  </style>
+</head>
+<body>
+  <h2>Password Verification</h2>
+  <form id="passwordForm" onsubmit="return verifyPassword();">
+    <label for="password1">Enter Password:</label>
+    <input type="text" id="password1" required /><br>
+
+    <label for="password2">Re-enter Password:</label>
+    <input type="text" id="password2" required /><br>
+
+    <button type="submit">Verify</button>
+  </form>
+
+  <script>
+    function verifyPassword() {
+      const p1 = document.getElementById('password1').value;
+      const p2 = document.getElementById('password2').value;
+
+      if (p1.length < 8 || p2.length < 8) {
+        alert('Password must be at least 8 characters long');
+        return false;
+      }
+      else if (p1 !== p2) {
+        alert('Passwords do not match');
+        return false;
+      }
+      alert('Passwords match');
+      return false;
+    }
+  </script>
+</body>
+</html>
